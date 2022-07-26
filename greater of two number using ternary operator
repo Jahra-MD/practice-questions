@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,b,large;
+    cout<<"enter the two numbers: \n";
+    cin>>a>>b;
+    if(a==b)
+       cout<<"both are equal ";
+    else large = a>b? a:b;
+    
+    cout<<"the largest number is \t"<<large;
+}
+
+o/p
+enter the two numbers: 
+7 1
+the largest number is 	7
