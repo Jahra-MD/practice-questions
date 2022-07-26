@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout<<"enter the  year: \n";
+    cin>>n;;
+    if(n%400 ==0 ||(n%4==0 && n%100!=0 ))
+        cout<<"leap year \n";
+    else cout<<"not leap year";
+}
+
+
+o/p
+enter the  year: 
+2012
+leap year 
