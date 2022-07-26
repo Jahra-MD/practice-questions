@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,sum;
+    cout<<"enter a number \n";
+    cin>>n;
+    sum = (n*(n+1))/2;
+    if(n%2 !=0)
+    {
+        sum =sum/(-1);
+    }
+    
+    cout<<sum;
+    return 0;
+}
+
+
+o/p
+enter a number 
+7
+-28
