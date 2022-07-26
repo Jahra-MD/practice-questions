@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,b,c,large,temp;
+    cout<<"enter the  numbers: \n";
+    cin>>a>>b>>c;;
+    if(a==b==c)cout<<"all are equal ";
+     temp = a>b? a:b;
+     large =temp>c? temp:c;
+    
+    cout<<"the largest number is \t"<<large;
+}
+
+
+o/p
+enter the two numbers: 
+2 3 4
+the largest number is 	4
