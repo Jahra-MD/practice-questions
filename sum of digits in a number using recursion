@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int sumDigit(int n,int sum)
+{
+  if(n==0)
+        return sum;
+  sum += n%10;
+  return sumDigit(n/10,sum);
+}
+int main() {
+    int num,sum=0;
+    cin>>num;
+    cout<<sumDigit(num,sum);
+    
+    return 0;
+}
+
+
+o/p
+123456789
+45
