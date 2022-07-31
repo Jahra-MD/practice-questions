@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int n,r,res=1;
+   cout<<"enter the no of people \n";
+   cin>>n;
+   cout<<"enter the no of seats \n";
+   cin>>r;
+   for(int i=r;i<=n;i++)
+   {
+       res = res*i;
+   }
+   cout<<"no of possibilities is \n"<<res;
+}
+
+
+o/p
+enter the no of people 
+7
+enter the no of seats 
+2
+no of possibilities is 
+5040
