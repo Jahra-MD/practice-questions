@@ -1,0 +1,26 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int SingleOccurElement(int arr[],int n)
+{   int res=0;
+    for(int i=n-1;i>=1;i-=2)
+    {
+       if(arr[i]!=arr[i-1])
+       {
+          res =arr[i];
+          break;
+       }
+    }
+    return res;
+}
+int main() {
+   int arr[]={2,1,1,3,4,4,8,8};
+   int n =sizeof(arr)/sizeof(arr[0]);
+   cout<<"the single occured element in the given sorted array is \n"<<SingleOccurElement(arr,n);
+    return 0;
+}
+
+
+o/p
+the single occured element in the given sorted array is 
+3
