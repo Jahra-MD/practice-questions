@@ -1,0 +1,35 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<stack>
+using namespace std;
+void ReverseIndividualwords(string str,int len)
+{
+    stack<char> s;
+    for(int i=0;i<len;i++)
+    {
+        if(str[i]!='.') 
+            s.push(str[i]);
+        else
+        {
+            while(s.empty()==false)
+            {
+                cout<<s.top();
+                s.pop();
+            }
+            cout<<".";
+        }
+    }
+     while (s.empty() == false) {
+        cout << s.top();
+        s.pop();
+    }
+}
+
+int main() {
+    string str="all.the.best";
+    int len =str.length();
+    ReverseIndividualwords(str,len);
+}
+
+o/p
+lla.eht.tseb
