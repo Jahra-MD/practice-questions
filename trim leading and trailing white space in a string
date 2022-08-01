@@ -1,0 +1,21 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void RemoveExtraSpace(string str,int len)
+{
+    for(int i=1;i<len-1;i++)
+    {  
+        cout<<str[i];
+    }
+}
+
+int main() {
+    string str=" an apple is a fruit. ";
+    int len =str.length();
+    RemoveExtraSpace(str,len);
+}
+
+
+
+o/p
+an apple is a fruit.
