@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <stack>
+using namespace std;
+void NonAdjacentstring(string str,int len)
+{  
+    stack<char>s;
+    for(int i=0;i<len;i++)
+    {
+        if(str[i]!=str[i+1])
+        {
+            s.push(str[i]);
+            cout<<s.top();
+        }
+        else
+            i=i+1;
+    }
+    if(s.empty()==true) cout<<"Empty String";
+}
+int main() {
+    string str="aaabccddd";
+    int len =str.length();
+    NonAdjacentstring(str,len);
+}
+
+
+o/p
+abd
