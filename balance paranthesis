@@ -1,0 +1,32 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<stack>
+using namespace std;
+void BalancePara(string str,int len)
+{  stack<int>s;
+    for(int i=0;i<len;i++)
+    {  if(str[i]=='(') s.push(str[i]);
+       if(str[i]==')')
+       {
+           if(s.empty()==false)
+           {   
+               s.pop();
+           }
+           else 
+               continue;
+       }
+        cout<<str[i];
+    }
+}
+int main() {
+   string str ="a+b+)c+(e+f)*-g)+f";
+   int len =str.length();
+   cout<<"the balanced Equation is \n";
+   BalancePara(str,len);
+    return 0;
+}
+
+
+o/p
+the balanced Equation is 
+a+b+c+(e+f)*-g+f
