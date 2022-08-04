@@ -1,0 +1,39 @@
+
+/*  direction of a person (x,y)
+   10 in right
+   20 in upward
+   30 in left
+   40 in down
+   50 again in right
+   count is increased by 10 in each step
+*/
+#include <iostream>
+using namespace std;
+int main() {
+   int curr_val=0,k,x=0,y=0,i=1,n;
+   cin>>n;
+   while(i<n+1)
+   {
+       curr_val+=10;
+       k=(i)%4;
+       switch(k)
+       {
+           case 1: x+=curr_val;
+                   break;
+           case 2: y+=curr_val;
+                   break;
+           case 3: x-=curr_val;
+                   break;
+           case 0: y-=curr_val;
+                   break;
+       }
+       i++;
+   }
+   cout<<x<<" "<<y;
+   
+}
+
+
+o/p
+5
+30 -20
