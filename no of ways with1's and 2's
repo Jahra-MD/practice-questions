@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+/* A ‘coin vend’ kiosk is installed all the major metro stations The machine allows one to obtain cash of ‘R’ rupees in exchange for coins. The machine operates with the following conditions:
+
+Only coins of denomination 1 rupee and 2 rupee can be exchanged.
+Coins of denomination 2 rupees should not be inserted successively twice.
+The task here to find all the possible combinations of the coins that can be inserted to get rupees from the kiosk.
+
+Input: 3 (1 + 1 + 1), (2 + 1), (1 + 2), Output: 3*/
+#include <iostream>
+using namespace std;
+int CountCoins(int n)
+{
+    if(n==0)
+          return 1;
+    if(n==1)
+          return 1;
+    if(n==2)
+          return 2;
+    return(CountCoins(n-1)+CountCoins(n-3));   //for no 1's conse =  return(CountCoins(n-2)+CountCoins(n-3)
+}                                              //with no condition = return(CountCoins(n-1)+CountCoins(n-2)
+int main() {
+    int n;
+    cin>>n;
+    cout<<CountCoins(n);
+}
+
+
+o/p
+5   //n value
+6    //no of ways
