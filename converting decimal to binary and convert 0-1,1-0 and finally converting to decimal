@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<math.h>
+using namespace std;
+int main() {
+    int n,i=0;
+    cout<<"enter a decimal number \n";
+    cin>>n;
+    int res =n,revres=0;
+    while(pow(2,i)<=n)
+    {
+        i++;
+    }
+    i=i-1;
+    while(i>=0)
+    {
+        if(pow(2,i)<=res)
+        {
+            cout<<1;
+            res -=pow(2,i);
+            revres += 0*pow(2,i);
+        }
+        else
+        {
+            cout<<0;
+            revres += 1*pow(2,i);
+        }
+        i--;
+    }
+    cout<<endl;
+    cout<<"the reverse of the decimal is \n"<<revres;
+}
+
+o/p
+enter a decimal number 
+50
+110010       //--> 001101
+the reverse of the decimal is 
+13
