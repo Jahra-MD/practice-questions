@@ -1,0 +1,35 @@
+/* There is a string of parentheses. The string can have any combination of parentheses. 
+You need to find the number of parentheses that constitute to form the longest valid parentheses. */
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<stack>
+using namespace std;
+int validParanthesis(string s,int n)
+{   int ans=0;
+    stack<int>p;
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='(')
+            p.push(i);
+    
+    else
+    {
+        if(p.empty()==false && s[i]==')')
+        {
+            ans =max(ans,i-p.top()+1);
+            p.pop();
+        }
+    }
+    }
+    return ans;
+}
+int main() {
+    string s=")())((()))(";
+    int n;
+    n=s.length();
+    cout<<validParanthesis(s,n);
+}
+
+o/p
+6    //((()))
