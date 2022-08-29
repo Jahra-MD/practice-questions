@@ -1,0 +1,56 @@
+/* Capgemini in its online written test have a coding question, wherein the students are given a string
+with multiple characters that are repeated consecutively. You’re supposed to reduce the size of this string using mathematical logic
+given as in the example below :
+
+Input :
+aabbbbeeeeffggg
+
+Output:
+a2b4e4f2g3
+ 
+ */
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void CountString(string s)
+{   int count=0,k=0,i,j;
+    string str;
+    int n=s.length();
+    for(i=0;i<n;i++)
+    {   
+        int count=0;
+        for(j=0;j<=i;j++)
+        {  
+            if(s[i]==s[j])
+                 count++;
+        }
+        if(count==1)
+        {
+            str[k]=s[i];
+            k++;
+        }
+    }
+    for(i=0;i<k;i++)
+    {   count=0;
+        for(j=0;j<n;j++)
+        {
+            if(str[i]==s[j])
+            {
+                count++;
+            }
+        }
+        if(count==1)
+        {
+            cout<<str[i];
+        }
+        else
+        {
+            cout<<str[i]<<count;
+        }
+    }
+}
+int main() {
+   string s="aabbbbeeeffgg";
+   CountString(s);
+}
