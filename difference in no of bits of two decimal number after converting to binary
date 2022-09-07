@@ -1,0 +1,62 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<math.h>
+#include<stack>
+using namespace std;
+stack<int> Binary_to_decimal(int n)
+{   stack<int>s;
+    int i,res,count=0; 
+    for(i=0;i<=n-1;i++)
+    {
+        if(n<pow(2,i))
+        {
+            break;
+        }
+    }
+     for(i=i-1;i>=0;i--)
+     {
+            if((n-pow(2,i)) >= 0)
+            {   s.push(1);
+                res =n -pow(2,i);
+            }
+            else
+                 s.push(0);
+            n =res;
+            count+=1;
+            cout<<s.top();
+     }
+     return s;
+}
+int main() {
+    int n,n2,count=0;
+    cout<<"enter the decimal value \n";
+    cin>>n;
+    stack<int> s1 =Binary_to_decimal(n);
+    
+    cout<<"\n enter the other decimal \n";
+    cin>>n2;
+    stack<int> s2 =Binary_to_decimal(n2);
+    while(s2.empty()==false && s1.empty()==false)
+    {
+        int x =s1.top();
+        s1.pop();
+        int y =s2.top();
+        s2.pop();
+        if(x^y ==1)
+        {
+            count +=1;
+        }
+    }
+    while(s2.empty()==false)
+    {
+        count +=1;
+    }
+    while(s1.empty()==false)
+    {
+        count +=1;
+    }
+    cout<<"the difference in bits is \n";
+    cout<<count;
+    
+        
+}
