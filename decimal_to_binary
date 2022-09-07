@@ -6,7 +6,7 @@ int main() {
     int n,i,res;
     cout<<"enter the decimal value \n";
     cin>>n;
-    for(i=0;i<(n/2)-1;i++)
+    for(i=0;i<n-1;i++)
     {
         if(n<pow(2,i))
         {
