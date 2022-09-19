@@ -1,0 +1,30 @@
+/* 
+Soham is in kindergarten. He likes arranging number in such a way
+that the highest number is placed at the top, and the lowest
+number is placed at the bottom. Shubham is the brother of Soham
+and wants to show his brother by displaying his liking in coding
+format. Help Shubham writing the code
+Input 1:
+5
+1 2 3 4 5
+Output 1:
+5 2 3 4 1              */
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main() {
+   int arr[]={1,2,3,4,5};
+   int n =sizeof(arr)/sizeof(arr[0]);
+   int x =*max_element(arr,arr+n);
+   int y =*min_element(arr,arr+n);
+   arr[0]=x;
+   arr[n-1]=y;
+   for(int i=0;i<n;i++)
+   {
+       cout<<arr[i]<<" ";
+   }
+}
+
+o/p
+5 2 3 4 1
