@@ -1,0 +1,73 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <stack>
+using namespace std;
+bool isdigit(char c)
+{
+        return (c >='1' && c<='9');
+        
+}
+bool isoperator(char c)
+{
+    if(c=='+' || c=='-' || c=='*' || c=='/')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void postfixevolution(char* c)
+{   stack<int>s;
+    for(int i=0;c[i]!='\0';i++)
+    {
+        if(isdigit(c[i]))
+        {
+              s.push(c[i]-48);
+            //   cout<<s.top();
+        }
+        
+        else if(isoperator(c[i]))
+        {
+            if(!s.empty())
+            {
+                int x =s.top();
+                // cout<<"x is"<<x<<endl;
+                 s.pop();
+               // cout<<"top is"<<s.top()<<endl;
+                int y=s.top();
+                s.pop();
+                // cout<<"y value is"<<y;
+                 switch(c[i])
+                 {
+                    case '+':
+                        s.push(x+y);
+                        break;
+                    case '-':
+                        s.push(y-x);
+                        break;
+                    case '*':
+                        s.push(x*y);
+                        break;
+                    case '/':
+                        s.push(y/x);
+                        break;
+                   }
+            }
+        }
+        
+    }
+    cout<<"the result of the expression is "<<s.top();
+}
+int main()
+{
+    char c[]="863-52+*+“;
+    postfixevolution(c);
+    
+}
+
+
+o/p
+
+the result of the expression is 29
