@@ -1,0 +1,41 @@
+/*
+Joey has been attacked by Joker . Bruce Wayne has deployed automatic machine
+gun at each tower of Smith. All the towers in Smith are in straight line. You are
+given no of towers 'n' followed by height of 'n' towers. For every tower(p), find
+the height of the closest tower (towards the right), greater than the height of
+tower(p). Now , Print sum of all such heights (mod 1000000001).
+
+Sample Input:
+9
+112 133 161 311 122 512 1212 0 19212
+Sample Output:
+41265
+*/
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <stack>
+using namespace std;
+void previousSmaller(int arr[],int n)
+{
+    stack<int>s;
+    s.push(arr[n-1]);
+    int sum =0;
+    for(int i=n-2;i>=0;i--)
+    {
+       while(s.empty()==false && s.top()<=arr[i])
+       {
+           s.pop();
+       }
+       sum += s.empty()? 0:s.top();
+       s.push(arr[i]);
+    }
+    cout<<" the sum of next greater is "<<sum;
+}
+int main() {
+    int arr[]={112,133,161,311,122,512,1212,0,19212};
+    int n =sizeof(arr)/sizeof(arr[0]);
+    previousSmaller(arr,n);
+}
+
+o/p
+the sum of next greater is 41265
