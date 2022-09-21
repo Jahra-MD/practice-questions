@@ -1,0 +1,27 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() {
+   long num;
+   int digit,rem,count=0;
+   cout<<"enter the number ";
+   cin>>num;
+   cout<<"enter the digit ";
+   cin>>digit;
+   while(num>0)
+   {
+     rem =num %10;
+     if(rem%digit!=0)
+     {
+         count +=1;
+     }
+     num=num/10;
+   }
+   cout<<count;
+}
+
+
+o/p
+enter the number 1234554321
+enter the digit 5
+8
