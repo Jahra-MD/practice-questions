@@ -1,0 +1,44 @@
+/*
+Amazon Prime Video is a subscription video-on-demand over-the-top streaming and rental service. The team at Prime Video
+is developing a method to divide movies into groups based on the number of awards they have won. A group can consist of 
+any number of movies, but the difference in the number of awards won by any two movies in the group must not exceed k
+The movies can be grouped together Irrespective of their initial order. Determine the minimum number of groups that can 
+be formed such that each movie is in exactly one group.
+
+Example
+
+The numbers of awards per movie are awards (1,5,4,6,8, 9, 21) and the maximum allowed difference is 3
+*/
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int getGroupCount(vector<int> awards,int k)
+{   sort(awards.begin(),awards.end());
+    int n =awards.size();
+    if(n==0)
+    {
+        return 0;
+    }
+    int getCount =1;
+    int groupStart =awards[0];
+    for(int i=1;i<n;i++)
+    {
+        if(awards[i]-groupStart >k)
+        {
+            getCount++;
+            groupStart =awards[i];
+        }
+    }
+    return getCount;
+}
+int main() {
+    cout<<getGroupCount({1,13,6,8,9,3,5},3);
+    return 0;
+}
+
+o/p
+4
