@@ -1,0 +1,31 @@
+/* 
+Let us find out whether the sum of the digits of the given positive integer number N is UNO
+or not. Given a positive integer number N, reduce the number of digits of N by computing
+the sum of all the digits to get a new number. If this new number exceeds 9, then sum the
+digits of this new number to get another number and continue this way until a single digit
+value is obtained as the ‘digit sum’. The task here is to find out whether the result of the
+digit sum done this way is ‘1’ or not.
+If the digit sum result is 1, display a message UNO if not print NOT UNO
+
+*/
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() {
+    int num,rem=0;
+    cin>>num;
+    while(num>0)
+    {
+        rem += num%10;
+        num =num/10;
+        rem =rem%9;
+    }
+    rem ==1?cout<<"UNO":cout<<"NOT UNO";
+}
+
+
+o/p
+12345
+NOT UNO
